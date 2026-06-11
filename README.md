@@ -1,1 +1,232 @@
-# Exploring_the_Brazi_-Real_Estate_Market_and_Building_a_model_to_predict_property_prices-
+# Exploring the Brazilian Real Estate Market and Predicting Property Prices
+
+## Project Overview
+
+This project explores the Brazilian real estate market through data cleaning, exploratory data analysis (EDA), and predictive modeling. The objective was to understand the factors that influence property prices and build machine learning models capable of estimating property values based on property characteristics and location information.
+
+The project uses a dataset containing property listings across Brazil (obtained from properati.com), including features such as property type, state, region, geographic coordinates, area, and price.
+
+
+## Objectives
+
+The main goals of this project were to:
+
+* Clean and prepare real estate data for analysis.
+* Explore trends and patterns in the Brazilian housing market.
+* Identify factors associated with property prices.
+* Build and evaluate predictive models for estimating property prices.
+* Compare the performance of different feature sets and modeling approaches.
+* Develop a reusable prediction function that can estimate property prices for new properties.
+
+
+## Dataset Features
+
+The dataset contains the following variables:
+
+| Feature       | Description                                   |
+| ------------- | --------------------------------------------- |
+| Property Type | Apartment or House                            |
+| State         | Brazilian state where the property is located |
+| Region        | Geographic region within Brazil               |
+| Latitude      | Property latitude coordinate                  |
+| Longitude     | Property longitude coordinate                 |
+| Area          | Property size in square meters                |
+| Price (USD)   | Property sale price (target variable)         |
+
+
+
+## Data Cleaning and Preparation
+
+The following preprocessing steps were performed:
+
+* Handling missing values.
+* Cleaning and formatting numerical variables.
+* Converting price values into numeric format.
+* Removing unnecessary observations and inconsistencies.
+* Preparing categorical variables for machine learning models.
+* Creating training and testing datasets.
+
+These steps ensured that the data was suitable for both exploratory analysis and predictive modeling.
+
+
+## Exploratory Data Analysis (EDA)
+
+A comprehensive exploratory analysis was conducted to better understand the Brazilian real estate market.
+
+### Univariate Analysis
+
+Individual variables were examined to understand their distributions and characteristics:
+
+* Property prices
+* Property area
+* Property type distribution
+* State distribution
+* Regional distribution
+
+### Bivariate Analysis
+
+Relationships between property prices and other variables were investigated:
+
+* Price vs Area
+* Price vs State
+* Price vs Region
+* Price vs Property Type
+* Geographic location vs Price
+
+Key visualizations included:
+
+* Histograms
+* Boxplots
+* Scatter plots
+* Bar charts
+* Geographic visualizations
+
+### Key Findings
+
+Some notable insights from the analysis include:
+
+* Property prices vary significantly across Brazilian states and regions.
+* Apartments tend to have higher average prices than houses.
+* Larger properties generally command higher prices.
+* Geographic location plays an important role in determining property values.
+* Property prices exhibit considerable variability even within the same state or region.
+
+
+## Predictive Modeling
+
+Several regression models were developed to investigate how different features contribute to property price prediction.
+
+### Model 1: Area-Based Linear Regression
+
+**Objective:** Predict property prices using only property area.
+
+**Feature Used:**
+
+* Area
+
+This model established a baseline understanding of how property size alone influences price.
+
+---
+
+### Model 2: Geographic Coordinates Linear Regression
+
+**Objective:** Predict property prices using location information.
+
+**Features Used:**
+
+* Latitude
+* Longitude
+
+This model examined the predictive power of geographic coordinates in estimating property values.
+
+---
+
+### Model 3: State-Based Linear Regression
+
+**Objective:** Predict property prices using state information.
+
+**Feature Used:**
+
+* State
+
+Categorical encoding was applied to transform state information into a format suitable for regression modeling.
+
+---
+
+### Model 4: Ridge Regression (Final Model)
+
+**Objective:** Predict property prices using all available features.
+
+**Features Used:**
+
+* Property Type
+* State
+* Region
+* Latitude
+* Longitude
+* Area
+
+A Ridge Regression model was selected for the final implementation because it helps address multicollinearity among predictors while maintaining strong predictive performance.
+
+This model leveraged the full information available in the dataset to generate more accurate price predictions.
+
+---
+
+## Prediction Function
+
+To improve usability and communication of results, a custom prediction function was developed.
+
+The function allows users to input property characteristics and receive an estimated property price generated by the trained model.
+
+Example inputs may include:
+
+* Property type
+* State
+* Region
+* Latitude
+* Longitude
+* Area
+
+The function then returns the predicted property value in USD.
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Jupyter Notebook
+* GitHub Codespaces
+
+---
+
+
+## Potential Applications
+
+The insights and models developed in this project can be useful for a variety of stakeholders:
+
+### Real Estate Investors
+
+* Identify regions with relatively affordable properties.
+* Compare property values across states and regions.
+* Support investment decision-making.
+
+### Home Buyers
+
+* Estimate whether a property's listed price is reasonable.
+* Compare housing costs across different locations.
+
+### Individuals Relocating Within Brazil
+
+* Understand housing affordability in different states and regions.
+* Make informed relocation decisions based on budget constraints.
+
+### Real Estate Agencies
+
+* Use predictive models to support property valuation.
+* Improve pricing strategies and market analysis.
+
+### Researchers and Data Scientists
+
+* Explore geographic influences on housing prices.
+* Use the project as a foundation for more advanced machine learning and geospatial analyses.
+
+---
+
+## Future Improvements
+
+Potential extensions to this project include:
+
+* Incorporating additional property features.
+* Applying advanced machine learning algorithms such as Random Forests and Gradient Boosting.
+* Deploying the prediction model as a web application.
+
+---
+
+## Conclusion
+
+This project demonstrates the complete data science workflow, from data cleaning and exploratory analysis to predictive modeling and deployment-ready prediction functions. Through the exploration of the Brazilian real estate market, valuable insights were uncovered regarding the impact of location, property type, and property size on housing prices. The final Ridge Regression model provides a practical framework for estimating property values and supporting data-driven decision-making in the real estate sector.
